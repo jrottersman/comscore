@@ -1,8 +1,8 @@
 {
-    "date": "2014-04-02", 
-    "provider": "warner bros", 
-    "rev": "4.00", 
-    "stb": "stb3", 
-    "title": "the matrix", 
-    "view_time": "1:05"
+    "DATE": "2014-04-02", 
+    "PROVIDER": "warner bros", 
+    "REV": "4.00", 
+    "STB": "stb3", 
+    "TITLE": "the matrix", 
+    "VIEW_TIME": "1:05"
 }

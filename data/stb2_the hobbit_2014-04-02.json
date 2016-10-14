@@ -1,8 +1,8 @@
 {
-    "date": "2014-04-02", 
-    "provider": "warner bros", 
-    "rev": "8.00", 
-    "stb": "stb2", 
-    "title": "the hobbit", 
-    "view_time": "2:45"
+    "DATE": "2014-04-02", 
+    "PROVIDER": "warner bros", 
+    "REV": "8.00", 
+    "STB": "stb2", 
+    "TITLE": "the hobbit", 
+    "VIEW_TIME": "2:45"
 }

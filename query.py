@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 import argparse
 
 from collections import defaultdict
@@ -34,12 +33,10 @@ select, order, filter = get_args()
 
 
 def select_data(select, files):
-    #create a dict with our selected values as keys and lists to store our values
-    values = []
-   # path = 'data/'
+    '''creates a list of dictionaries with the selected data'''
 
-    #for fileName in os.listdir(path):
-     #   fileName = os.path.join(path, fileName)
+    values = []
+
     for fileName in files:
         l = {}
         with open(fileName, 'r') as f:
@@ -52,8 +49,10 @@ def select_data(select, files):
     return values
 
 def filter_data(filter):
-    #split the strings in the list
-    #return the files that contain our true value
+    '''Finds the files that have the data we want according to a filter if
+    no filter is passed in it finds all files in the data directory to
+    allow for them to be queried'''
+
     files = []
     path = 'data/'
 
@@ -62,9 +61,10 @@ def filter_data(filter):
             fileName = os.path.join(path, fileName)
             files.append(fileName)
     else:
-
+        #split the filter into the key value pair that we want to find 
         key, value = str(filter).split("=")
-
+        
+        #search for the desired key value pair in out json files
         for fileName in os.listdir(path):
             fileName = os.path.join(path, fileName)
 
@@ -80,6 +80,14 @@ def order_data(data, order):
         data = sorted(data, key = itemgetter(",".join(order)))
     return data
 
-x = order_data(select_data(select, filter_data(filter)), order)
-print(x)
-#print(order_data(order, selector(select)))
+def main(select, order, filter):
+
+    x = order_data(select_data(select, filter_data(filter)),order)
+    
+    for i in x:
+        pprint(i.values())
+
+if __name__ == '__main__':
+
+    main(select, order, filter)
+    
